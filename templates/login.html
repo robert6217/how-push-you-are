@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block container %}
+
+<div id="fb-root"></div>
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">Start to Push</h1>
+        <div class="row center">
+            <h5 class="header col s12 light">Let's login this website to see how push you are! As long as you have a Facebook account, you can login to our system.</h5>
+        </div>
+        <div class="row center">
+            <div class="col s12">
+                <a href="javascript: void(0)" onclick="checkFBlogin();" class="btn-large waves-effect waves-light indigo darken-1">Login with Facebook<i class="material-icons right">directions_run</i></a>
+            </div>
+        </div>
+        <br><br>
+        <div class="row center">
+            <h5 class="header col s12 light">Or you may want to learn more first.</h5>
+        </div>
+        <div class="row center">
+            <a href="{{url_for('about')}}" class="btn-large waves-effect waves-light orange">system introduction</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

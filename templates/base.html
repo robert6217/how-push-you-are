@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    {% block style %}{% endblock %}
+    <style>
+        .fontstyle{
+            color: rgba(255,255,255,.7);
+            font-weight: 400;
+            text-transform: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="light-blue orange darken-3" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="{{url_for('index')}}" class="brand-logo">HOW PUSH</a>
+            <ul class="left hide-on-med-and-down " style="margin-left: 20%;">
+                <li {% block active_home %}{% endblock %}><a class="fontstyle" href="{{url_for('index')}}">Push</a></li>
+                <li {% block active_about %}{% endblock %}><a class="fontstyle" href="{{url_for('about')}}">About</a></li>
+                <li><a class="fontstyle" href="https://github.com/robert6217/how-push-you-are" target="_blank">GITHUB</a></li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="{{url_for('index')}}">Push</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="section">
+            {% block container %}{% endblock %}
+        </div>
+    </div>
+
+    <!--  Scripts -->
+    <script src="static/FBJS/fb_login.js"></script>
+    <script src="static/FBJS/fb_logout.js"></script>
+    <script src="static/FBJS/fb_sdk.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="static/JavaScripts/init.js"></script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>
