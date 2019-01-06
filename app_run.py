@@ -7,7 +7,7 @@ from datetime import timedelta
 from flask_login import UserMixin, LoginManager, login_required, current_user, login_user, logout_user
 
 app = Flask(__name__)
-app.secret_key = 'ee11cf35a1ae0bdd35f06ef151fb004d'
+app.secret_key = 'YOUR KEY'
 login_manager = LoginManager()
 
 login_manager.init_app(app)
