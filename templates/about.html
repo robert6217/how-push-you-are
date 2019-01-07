@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block style %}
+
+<style>
+.subtitle {
+    text-align: right;
+    margin-top: -41px;
+    font-size: 10px;
+    font-family: monospace;
+}
+
+.libottom {
+    margin-bottom: 15px;
+}
+</style>
+
+{% endblock %}
+
+{% block active_about %}class="active"{% endblock %}
+
+{% block container %}
+
+<div class="row">
+    <div class="col s12 m9 l10">
+        <div class="row">
+            <div class="center">
+                <h1 class="scrollspy header orange-text" id="what">WHAT</h1>
+                <div class="subtitle">What is this system?</div>
+                <h5 style="margin-bottom:50px;" class="header light">This is a website system. When you log in with Facebook, we will use the your Facebook profile picture to do the analysis. After the system analysis, you will know HOW PUSH YOU ARE in PTT. </h5>
+            </div>
+            <div class="col l7 s12 m12">
+                <img class="materialboxed" data-caption="A photo of system architecture diagram" width="605" src="static/img/frame.png">
+            </div>
+            <div class="col l5 s12 m12">
+                <div style="margin-top:50px; margin-left: 20px">
+                    <ul>
+                        <li class="libottom">1. User browse HOWPUSH website, and login.</li>
+                        <li class="libottom">2. HOWPUSH request the server.</li>
+                        <li class="libottom">3. Call Facebook API to get user’s Token.</li>
+                        <li class="libottom">4. Server get user’s Token.</li>
+                        <li class="libottom">5. Server store the user information, include userID, name, token, picture(profile picture).</li>
+                        <li class="libottom">6. Response the user information of the specified Token.</li>
+                        <li class="libottom">7. Predict user’s profile picture will get how many 'push'.</li>
+                        <li class="libottom">8. Return to HOWPUSH website</li>
+                        <li class="libottom">9. User get the predict information about 'push'.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="margin-top:50px;">
+                <div class="center">
+                    <h1 class="scrollspy header center orange-text" id="why">WHY</h1>
+                    <div class="subtitle">Why do this?</div>
+                    <h5 style="margin-bottom:50px;" class="header col s12 light">We are master student in Tamkang University, we have a 'Big Data Mining' course in the spring semester of 2018, this is our final project.</h5>
+                    <h5>In this course, we learned a lot about machine learning, deep learning and many big data analysis applications, and how to use these module, so that we can easily to train the model and predict it, as the teacher often said: “Three lines of code.” 
+					Among this, we are more interested in the application of CNN, so we want to train a model to be close to our lives, and finally decided to predict how many pushes in the Beauty of PTT. We also hope that in addition to practice, we can make a system and truly use our model.</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="center">
+                        <h1 class="scrollspy header center orange-text" id="where">WHERE</h1>
+                        <div class="subtitle">Where can I use this system?</div>
+                        <h5 class="header col s12 light">Here you are and let's start it. Please click the buttom below the satences and login with Facebook then you can see how many pushes will you get, let's try.</h5>
+                        <a href="{{url_for('index')}}" id="download-button" class="center btn-large waves-effect waves-light orange">start to predict</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12">
+                    <div class="center">
+                        <h1 class="scrollspy header center orange-text" id="how">HOW</h1>
+                        <div class="subtitle">How did we do it?</div>
+                    </div>
+                    <h5 class="header col s12 light">This is a website system. When you log in with Facebook, we will use the your Facebook profile picture to do the analysis. After the system analysis, you will know HOW PUSH YOU ARE in PTT.</h5>
+                </div>
+	            <div class="col l7 s12 m12">
+	                <img class="materialboxed" data-caption="A photo of system architecture diagram" width="605" src="static/img/flow.png">
+	            </div>
+            </div>
+        </div>
+    </div>
+    <div class="col hide-on-small-only m3 l2">
+        <ul class="section table-of-contents right-align" style="padding-top:250px; position:fixed; font-size: 20px; margin-left: 50px">
+            <li class="left-align"><a href="#what">WHAT</a></li>
+            <li class="left-align"><a href="#why">WHY</a></li>
+            <li class="left-align"><a href="#where">WHERE</a></li>
+            <li class="left-align"><a href="#how">HOW</a></li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
